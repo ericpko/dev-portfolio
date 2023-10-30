@@ -1,0 +1,26 @@
+<!-- prettier-ignore -->
+{% extends "layout.html" %}
+
+{% block title %}About Eric{% endblock %}
+
+{% block content %}
+<h1>Hi, this page is about me!</h1>
+
+<button
+  type="button"
+  hx-get="/api/hello"
+  hx-swap="innerHtml"
+  class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+>
+  Say hello
+</button>
+<p>
+  I've enjoyed working in frameworks such as Svelte, but there's something
+  satisfying about being minimal and going back to basics.
+</p>
+<p>
+  On a personal level, I'm a well-rounded individual who enjoys playing racket
+  sports such as tennis, pickleball, badminton, and table tennis. I also enjoy
+  paddleboarding, working out, and maintaining a healthy lifestyle.
+</p>
+{% endblock %}
