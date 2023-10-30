@@ -18,9 +18,9 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="container max-w-[768px] space-y-10 flex flex-col">
+  <body class="container flex max-w-[768px] flex-col space-y-10">
     <header class="p-4 font-mono">{% include "navbar.html" %}</header>
-    <main class="p-4 space-y-10 grow">
+    <main class="grow space-y-10 p-4">
       <!-- Inheriting pages will have their content rendered here, similar to app root in React, Angular, etc. -->
       {% block content %}{% endblock %}
     </main>
