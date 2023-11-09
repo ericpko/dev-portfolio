@@ -1,0 +1,23 @@
+<!-- prettier-ignore -->
+{% extends "layout.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+
+<section class="mx-auto flex max-w-2xl flex-col gap-5">
+  <h1 class="text-center font-mono text-2xl">
+    &lt;page&gt <strong class="text-3xl">Projects</strong> &lt;/page&gt
+  </h1>
+  <p>Blah blah</p>
+</section>
+
+<button
+  type="button"
+  hx-get="/api/hello"
+  hx-swap="innerHtml"
+  class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+>
+  Say hello
+</button>
+{% endblock %}

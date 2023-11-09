@@ -33,6 +33,7 @@ async fn main() -> anyhow::Result<()> {
         .nest("/api", api_router)
         .route("/", get(index))
         .route("/about", get(about))
+        .route("/projects", get(projects))
         // Add a tower service route to serve everything under the assets/ folder
         .nest_service(
             "/assets",
@@ -89,4 +90,13 @@ async fn about() -> impl IntoResponse {
 
 async fn hello_from_the_server() -> &'static str {
     "Hello!"
+}
+
+#[derive(Template)]
+#[template(path = "projects.html")]
+struct ProjectsPageTemplate;
+
+async fn projects() -> impl IntoResponse {
+    let template = ProjectsPageTemplate {};
+    HtmlTemplate(template)
 }
