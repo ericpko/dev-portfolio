@@ -13,6 +13,8 @@ use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 use dev_portfolio::HtmlTemplate;
 
+mod api;
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     tracing_subscriber::registry()
@@ -28,7 +30,7 @@ async fn main() -> anyhow::Result<()> {
     // We could also read our port in from the environment as well
     let dir_path = std::env::current_dir().unwrap();
 
-    let api_router = Router::new().route("/hello", get(hello_from_the_server));
+    let api_router = api::build_api_router().await;
     let router = Router::new()
         .nest("/api", api_router)
         .route("/", get(index))
@@ -86,10 +88,6 @@ struct AboutPageTemplate;
 async fn about() -> impl IntoResponse {
     let template = AboutPageTemplate {};
     HtmlTemplate(template)
-}
-
-async fn hello_from_the_server() -> &'static str {
-    "Hello!"
 }
 
 #[derive(Template)]
