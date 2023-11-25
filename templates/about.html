@@ -18,14 +18,18 @@
   </h1>
   <p>
     Hi, I'm Eric and welcome to my dev site where I share some of the personal
-    projects I'm working on. Recently, I've been investigating what all this
-    hype is about surrounding htmx and I've got to say &#8212; I'm a fan! By
-    now, I've worked in all the popular javascript frameworks such as React,
-    Svelte, etc., but there's something very satisfying about using a minimal
-    setup and returning the power back to the server. I built this site using
-    Axum, a Rust server on the backend, Askama, a Rust template engine, htmx and
-    tailwindcss to add reactivity and style for the frontend, and hosted it all
-    on fly.io in a Docker container.
+    projects I'm working on. Recently, I've been investigating what all the hype
+    is surrounding htmx, and I've got to say &#8212; I'm a fan! By now, I've
+    worked in all the popular javascript frameworks such as React, Svelte, etc.,
+    but there's something very satisfying about using a minimal setup and
+    returning the power back to the server. I built this site using 
+    <ul class="list-disc ml-8">
+      <li class="">Axum: a Rust server for the backend.</li>
+      <li>Askama: a templating engine in Rust.</li>
+      <li>htmx: an extension to HTML giving you reactivity in markup without the need for JavaScript.</li>
+      <li>tailwindcss: for styling the frontend.</li>
+      <li>fly.io: for hosting this site in a Docker container.</li>
+    </ul>
   </p>
 
   <p>
@@ -33,14 +37,15 @@
     pickleball, badminton, and table tennis. I also enjoy paddleboarding,
     working out, and maintaining a healthy lifestyle.
   </p>
+
+  <button
+    type="button"
+    hx-get="/api/hello"
+    hx-swap="innerHtml"
+    class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+  >
+    Say hello from the Rust web server
+  </button>
 </section>
 
-<button
-  type="button"
-  hx-get="/api/hello"
-  hx-swap="innerHtml"
-  class="rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
->
-  Say hello
-</button>
 {% endblock %}

@@ -5,5 +5,5 @@ pub async fn build_api_router() -> Router {
 }
 
 async fn hello_from_the_server() -> &'static str {
-    "Hello!"
+    "Hello from the server!"
 }
