@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "bun-types": "latest",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "tailwindcss": "^3.3.5"
+    "prettier": "latest",
+    "prettier-plugin-tailwindcss": "latest",
+    "tailwindcss": "latest"
   }
 }
